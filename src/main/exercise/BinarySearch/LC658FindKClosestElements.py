@@ -49,11 +49,9 @@ class Solution:
             return arr
 
         index_closest_to_target = self.searchClosestElementToTarget(arr, x)
-        left = index_closest_to_target
-        right = left
+        left, right = index_closest_to_target, index_closest_to_target
 
-        window_size = right - left + 1
-        while window_size < k:
+        while right - left + 1 < k:
             if left <= 0:
                 right += 1
             elif right >= len(arr) - 1:
@@ -62,8 +60,6 @@ class Solution:
                 left -= 1
             else:
                 right += 1
-            window_size = right - left + 1
-        # Return the window
         return arr[left:right+1]
 
 
