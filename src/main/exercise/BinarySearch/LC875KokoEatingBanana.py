@@ -4,21 +4,20 @@ from typing import List
 
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        min_rate = max(piles)
         lo, hi = 1, max(piles)
-        while lo < hi:
+        while lo <= hi:
             rate = lo + (hi - lo) // 2
             hours = 0
             for p in piles:
-                if p < rate:
-                    hours += 1
-                else:
                     hours += math.ceil(p / rate)
 
             if hours <= h:
-                hi = rate
+                min_rate = min(min_rate, rate)
+                hi = rate - 1
             else:
                 lo = rate + 1
-        return lo
+        return min_rate
 
 
 if __name__ == '__main__':
