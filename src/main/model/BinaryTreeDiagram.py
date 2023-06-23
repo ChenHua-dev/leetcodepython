@@ -2,7 +2,7 @@ from typing import List
 from model.TreeNode import TreeNode
 
 
-class BinaryDiagram:
+class BinaryTreeDiagram:
     """
            1
          /   \
