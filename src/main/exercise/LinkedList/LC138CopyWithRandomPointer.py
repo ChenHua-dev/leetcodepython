@@ -1,4 +1,4 @@
-from model.Node import Node
+from model.RandomNode import Node
 from typing import Optional
 
 
