@@ -15,7 +15,7 @@ class BinaryTreeFromArray:
             root.left = TreeNode(arr[leftIndex])
             self.generate(root.left, leftIndex, arr)
 
-        rightIndex = 2 * rootIndex + 2;
+        rightIndex = 2 * rootIndex + 2
         if rightIndex < n and arr[rightIndex] is not None:
             root.right = TreeNode(arr[rightIndex])
             self.generate(root.right, rightIndex, arr)
