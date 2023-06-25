@@ -32,22 +32,22 @@ if __name__ == '__main__':
     root3 = tree.generateBinaryTree([])
     root4 = tree.generateBinaryTree([1,2,2,3,None,None,3,4,None,None,4])
     root5 = tree.generateBinaryTree([1,None,2,None,3])
-    s = Solution()
-    print(s.isBalanced(root1))  # true
-    print(s.isBalanced(root2))  # false
-    print(s.isBalanced(root3))  # true
-    print(s.isBalanced(root4))  # false
-    print(s.isBalanced(root5))  # false
+    # s = Solution()
+    # print(s.isBalanced(root1))  # true
+    # print(s.isBalanced(root2))  # false
+    # print(s.isBalanced(root3))  # true
+    # print(s.isBalanced(root4))  # false
+    # print(s.isBalanced(root5))  # false
 
-    # diagram = BinaryTreeDiagram()
-    # diagram.show(root1)
-    # print()
-    # diagram.show(root2)
-    # print()
-    # diagram.show(root3)
-    # print()
-    # diagram.show(root4)
-    # print()
-    # diagram.show(root5)
+    diagram = BinaryTreeDiagram()
+    diagram.show(root1)
+    print()
+    diagram.show(root2)
+    print()
+    diagram.show(root3)
+    print()
+    diagram.show(root4)
+    print()
+    diagram.show(root5)
 
 
