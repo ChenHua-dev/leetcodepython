@@ -48,31 +48,30 @@ class BinaryTreeDiagram:
     def show(self, root: TreeNode) -> None:
         if not root:
             print("EMPTY!")
-        # 得到树的深度
-        treeDepth = self.getTreeHeight(root)
+        else:
+            # 得到树的深度
+            treeDepth = self.getTreeHeight(root)
+            # 最后一行的宽度为2的（n - 1）次方乘3，再加1
+            # 作为整个二维数组的宽度
+            arrayHeight = treeDepth * 2 - 1
+            arrayWidth = (2 << (treeDepth - 2)) * 3 + 1
+            # 用一个字符串数组来存储每个位置应显示的元素
+            res = []
+            # 对数组进行初始化，默认为一个空格
+            for _ in range(arrayHeight):
+                row = []
+                for _ in range(arrayWidth):
+                    row.append(" ")
+                res.append(row)
+            # 从根节点开始，递归处理整个树
+            # res[0][(arrayWidth + 1)/ 2] = (char)(root.val + '0');
+            self.writeArray(root, 0, arrayWidth // 2, res, treeDepth)
+            # 此时，已经将所有需要显示的元素储存到了二维数组中，将其拼接并打印即可
+            for line in res:
+                builder = ""
+                for i in range(len(line)):
+                    builder += line[i]
+                    if len(line[i]) > 1 and i <= len(line) - 1:
+                        i += 2 if len(line[i]) > 4 else len(line[i]) - 1
+                print(str(builder))
 
-        # 最后一行的宽度为2的（n - 1）次方乘3，再加1
-        # 作为整个二维数组的宽度
-        arrayHeight = treeDepth * 2 - 1
-        arrayWidth = (2 << (treeDepth - 2)) * 3 + 1
-        # 用一个字符串数组来存储每个位置应显示的元素
-        res = []
-        # 对数组进行初始化，默认为一个空格
-        for _ in range(arrayHeight):
-            row = []
-            for _ in range(arrayWidth):
-                row.append(" ")
-            res.append(row)
-
-        # 从根节点开始，递归处理整个树
-        # res[0][(arrayWidth + 1)/ 2] = (char)(root.val + '0');
-        self.writeArray(root, 0, arrayWidth // 2, res, treeDepth)
-
-        # 此时，已经将所有需要显示的元素储存到了二维数组中，将其拼接并打印即可
-        for line in res:
-            builder = ""
-            for i in range(len(line)):
-                builder += line[i]
-                if len(line[i]) > 1 and i <= len(line) - 1:
-                    i += 2 if len(line[i]) > 4 else len(line[i]) - 1
-            print(str(builder))
