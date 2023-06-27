@@ -26,7 +26,7 @@ if __name__ == '__main__':
     tree = BinaryTreeFromArray()
     root1 = tree.generateBinaryTree([3,9,20,None,None,15,7])
     root2 = tree.generateBinaryTree([8,5,10,1,7,None,12])
-    root3 = tree.generateBinaryTree([1,2,8,3,4,9,None,5,None,None,None,None,None,None,None,6,7])
+    root3 = tree.generateBinaryTree([1,2,8,3,4,9,None,5,None,None,None,None,None,6,7])
 
     diagram = BinaryTreeDiagram()
     diagram.show(root1)
