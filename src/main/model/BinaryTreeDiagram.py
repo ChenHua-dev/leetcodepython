@@ -24,7 +24,7 @@ class BinaryTreeDiagram:
             return
 
         # Recursive case: 先将当前节点保存到二维数组中
-        res[rowIndex][columnIndex] = "" if not currNode.val else str(currNode.val)
+        res[rowIndex][columnIndex] = "" if not currNode else str(currNode.val)
 
         # 计算当前位于树的第几层
         currLevel = ((rowIndex + 1) // 2)
