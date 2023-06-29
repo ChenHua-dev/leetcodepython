@@ -1,7 +1,7 @@
 from model.BinaryTreeDiagram import BinaryTreeDiagram
 from model.BinaryTreeFromArray import BinaryTreeFromArray
 from model.TreeNode import TreeNode
-from typing import Optional, List
+from typing import Optional
 
 
 class Solution:
