@@ -46,8 +46,11 @@ class BinaryTreeDiagram:
             self.writeArray(currNode.right, rowIndex + 2, columnIndex + gap * 2, res, treeDepth)
 
     def show(self, root: TreeNode) -> None:
+        res = []
         if not root:
             print("EMPTY!")
+        if not root.left and not root.right:
+            print(str(root.val))
         else:
             # 得到树的深度
             treeDepth = self.getTreeHeight(root)
@@ -56,7 +59,7 @@ class BinaryTreeDiagram:
             arrayHeight = treeDepth * 2 - 1
             arrayWidth = (2 << (treeDepth - 2)) * 3 + 1
             # 用一个字符串数组来存储每个位置应显示的元素
-            res = []
+            # res = []
             # 对数组进行初始化，默认为一个空格
             for _ in range(arrayHeight):
                 row = []
