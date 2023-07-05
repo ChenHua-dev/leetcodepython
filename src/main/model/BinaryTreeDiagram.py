@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from model.TreeNode import TreeNode
 
 
@@ -45,12 +45,14 @@ class BinaryTreeDiagram:
             res[rowIndex + 1][columnIndex + gap] = "\\"
             self.writeArray(currNode.right, rowIndex + 2, columnIndex + gap * 2, res, treeDepth)
 
-    def show(self, root: TreeNode) -> None:
+    def show(self, root: Optional[TreeNode]) -> None:
         res = []
         if not root:
             print("EMPTY!")
+            return
         if not root.left and not root.right:
             print(str(root.val))
+            return
         else:
             # 得到树的深度
             treeDepth = self.getTreeHeight(root)
