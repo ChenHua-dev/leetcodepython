@@ -1,6 +1,6 @@
 from typing import List
 
-
+# https://www.youtube.com/watch?v=YqQvmemMbe4
 class Solution:
     def restoreIpAddresses(self, s: str) -> List[str]:
         res = []
