@@ -28,7 +28,9 @@ class Solution:
 
         curr_char = self.map[digits[index]]
         for c in curr_char:
-            self.dfs(digits, res, index + 1, substr + c)
+            substr += c
+            self.dfs(digits, res, index + 1, substr)
+            substr = substr[:-1]
 
 
 if __name__ == '__main__':
