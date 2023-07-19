@@ -15,9 +15,13 @@ class Solution:
             res.append(cur)
 
         if left_count < n:
-            self.dfs(n, res, cur + "(", left_count + 1, right_count)
+            cur += "("
+            self.dfs(n, res, cur, left_count + 1, right_count)
+            cur = cur[:-1]
         if right_count < left_count:
-            self.dfs(n, res, cur + ")", left_count, right_count + 1)
+            cur += ")"
+            self.dfs(n, res, cur, left_count, right_count + 1)
+            cur = cur[:-1]
 
 
 if __name__ == '__main__':
