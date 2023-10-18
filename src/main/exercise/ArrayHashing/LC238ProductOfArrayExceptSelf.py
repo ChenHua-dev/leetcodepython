@@ -3,22 +3,26 @@ from typing import List
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        length = len(nums)
-        res = [0] * length
+        n = len(nums)
 
-        tmp = 1
-        prefix = [0] * length
-        for i in range(length):
-            prefix[i] = tmp
-            tmp *= nums[i]
+        left = 1
+        prefix = [1] * n
+        for i in range(1, n):
+            left = left * nums[i-1]
+            prefix[i] = left
 
-        tmp = 1
-        postfix = [0] * length
-        for i in range(length - 1, -1, -1):
-            postfix[i] = tmp
-            tmp *= nums[i]
+        right = 1
+        suffix = [1] * n
+        for i in range(n-2, -1, -1):
+            right = right * nums[i+1]
+            suffix[i] = right
 
-        for i in range(length):
-            res[i] = prefix[i] * postfix[i]
-
+        res = [0] * n
+        for i in range(n):
+            res[i] = prefix[i] * suffix[i]
         return res
+
+
+if __name__ == "__main__":
+    s = Solution()
+    print(s.productExceptSelf([2,3,4,5]))
